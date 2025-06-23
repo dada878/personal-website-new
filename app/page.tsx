@@ -18,8 +18,8 @@ export default function Home() {
     label: key,
     content: (
       <div className="list-disc list-inside space-y-1 text-gray-300 prose prose-invert">
-        {experiences[key].map((item: string, idx: number) => (
-            <ReactMarkdown components={{a: props => <a {...props} className="underline hover:text-white" target="_blank" rel="noopener noreferrer"/>}}>{`- ${item}`}</ReactMarkdown>
+        {experiences[key].map((item: string) => (
+            <ReactMarkdown components={{a: props => <a {...props} className="underline hover:text-white" target="_blank" rel="noopener noreferrer"/>}} key={item}>{`- ${item}`}</ReactMarkdown>
         ))}
       </div>
     ),
@@ -110,7 +110,7 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-6 py-12 border-b border-[#23272A]">
         <h2 className="text-2xl font-semibold mb-6">作品集</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {projects.map((proj, idx) => (
+          {projects.map((proj) => (
             <a
               key={proj.url}
               href={proj.url}
